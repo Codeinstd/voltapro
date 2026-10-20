@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1411">
+  <meta name="description" content="Explore Volta Pro Solutions power, solar, smart automation and security products.">
+  <title>Product Catalog | Volta Pro Solutions</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Valley+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+
+<body class="catalog-page">
+  <header class="site-header">
+    <div class="container nav-wrap"><a class="brand" href="index.html"><img src="./assets/logo.png" width=100
+          height=32></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav"
+        aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+      <nav id="main-nav" class="main-nav" aria-label="Main navigation"><a href="index.html#services">Services</a><a
+          class="active" href="catalog.html">Catalog</a><a href="index.html#process">How it works</a><a
+          href="index.html#contact">Contact</a><button class="button button-accent js-quote" type="button">Get a quote
+          <span>↗</span></button></nav>
+    </div>
+  </header>
+  <main>
+    <section class="catalog-hero">
+      <div class="container catalog-hero-inner">
+        <p class="eyebrow"><span class="status-dot"></span> The catalog</p>
+        <h1>Everything we supply<br>and <em>install.</em></h1>
+        <p>Power systems, smart automation and security equipment. Pick any product to request a quote.</p>
+        <!-- <div class="catalog-stats"><span><strong>13</strong> product categories</span><span><strong>3</strong> connected
+            systems</span><span>Built around your site</span></div> -->
+      </div>
+    </section>
+    <section class="catalog-content">
+      <div class="container">
+        <div class="catalog-toolbar">
+          <div>
+            <p class="eyebrow eyebrow-dark">Explore the range</p>
+            <h2>Find the right fit.</h2>
+          </div><label class="search-box"><span aria-hidden="true">⌕</span><input id="product-search" type="search"
+              placeholder="Search solar, camera, lock…" aria-label="Search products"><kbd>⌘ K</kbd></label>
+        </div>
+        <div class="filter-row" role="group" aria-label="Filter products"><button class="filter-chip is-active"
+            data-filter="all" type="button">All products <span>13</span></button><button class="filter-chip"
+            data-filter="power" id="power" type="button">Power &amp; solar</button><button class="filter-chip"
+            data-filter="smart" id="smart" type="button">Smart automation</button><button class="filter-chip"
+            data-filter="security" id="security" type="button">Security</button></div>
+        <p class="results-count" id="results-count" aria-live="polite">13 products</p>
+        <div class="product-grid catalog-grid" id="catalog-products" data-catalog></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <h3>No products match your search.</h3>
+          <p>Can't find what you need? Tell us about your site and we’ll recommend something.</p><button
+            class="button button-dark js-quote" type="button">Request a quote</button>
+        </div>
+      </div>
+    </section>
+    <section class="contact-band">
+      <div class="container contact-inner">
+        <div>
+          <p class="eyebrow eyebrow-dark">Need a complete system?</p>
+          <h2>Not just one device. A solution.</h2>
+          <p>Describe your site and we’ll help put together the right combination of power, automation and security.</p>
+        </div><button class="button button-dark js-quote" type="button">Start a quote request <span>↗</span></button>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <div><a class="brand brand-footer" href="index.html"><img src="./assets/logo.png" width=100 height=32></a>
+        <p>A Nigerian engineering and renewable energy company specializing in power systems, smart automation and
+          security installations.</p>
+      </div>
+      <div class="footer-contact"><span>+234 815 799 9531</span><span>voltaprosolutions@gmail.com</span><span>7, Femi
+          Osobu Street, Cele Egeb Bus Stop, Agodo, Lagos</span>
+
+      </div>
+    </div>
+    <div class="container footer-bottom"><span>© <span data-year></span> Volta Pro Solutions</span>
+      <div style="display: flex; flex-direction: row; gap: 16px;">
+        <span> <a href="instagram.com/voltapro_solutions" aria-label="Instagram" target="_blank"
+            rel="noopener noreferrer">
+            <i class="fa-brands fa-instagram"></i></a></span>
+        <span> <a href="facebook.com/voltapro_solutions" aria-label="Facebook" target="_blank"
+            rel="noopener noreferrer">
+            <i class="fa-brands fa-facebook-f"></i></a></span>
+      </div>
+    </div>
+    </div>
+  </footer>
+  <div class="modal" id="quote-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button
+        class="modal-close" type="button" aria-label="Close quote form" data-close-modal>×</button>
+      <div class="modal-heading">
+        <p class="eyebrow eyebrow-dark">Let’s talk</p>
+        <h2 id="modal-title">Tell us about your project.</h2>
+        <p>Fill in the essentials and we’ll have the context to follow up.</p>
+      </div>
+      <form id="quote-form">
+        <div class="form-grid"><label>Full name *<input name="name" autocomplete="name" required
+              placeholder="Your name"></label><label>Phone number *<input name="phone" autocomplete="tel" required
+              placeholder="Best number to reach you"></label><label>Email address<input name="email" type="email"
+              autocomplete="email" placeholder="you@example.com"></label><label>Location<input name="location"
+              autocomplete="address-level2" placeholder="City or area"></label><label>Project type<select name="type">
+              <option>Home</option>
+              <option>Business</option>
+              <option>Estate / facility</option>
+              <option>Other</option>
+            </select></label><label>Product of interest<select name="product" id="quote-product">
+              <option value="">Not sure yet / complete system</option>
+            </select></label><label class="form-full">Project details<textarea name="message" rows="3"
+              placeholder="What are you looking to power, automate or secure?"></textarea></label></div>
+        <p class="form-error" id="form-error" role="alert"></p>
+        <p class="form-success" id="form-success" role="status">Thanks! Your details have been prepared. Connect this
+          form to your email or CRM to receive submissions.</p><button class="button button-dark form-submit"
+          type="submit">Prepare quote request <span>↗</span></button>
+        <p class="form-footnote">Demo form: it validates locally but does not send data to a server.</p>
+      </form>
+    </section>
+  </div>
+</body>
+
+</html>
